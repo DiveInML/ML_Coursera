@@ -20,6 +20,11 @@ for iter = 1:num_iters
 
 
 
+    T1 = X*theta.-y;
+    T2 = T1'*X;
+    dJ = T2./m;
+    alphadJ = dJ.*alpha;
+    theta = theta .- alphadJ'; 
 
 
 
