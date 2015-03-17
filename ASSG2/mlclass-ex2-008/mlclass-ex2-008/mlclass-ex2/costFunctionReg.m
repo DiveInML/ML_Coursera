@@ -18,7 +18,6 @@ grad = zeros(size(theta));
 %               derivatives of the cost w.r.t. each parameter in theta
 
 
-<<<<<<< HEAD
 n=size(X)(2);
 
 t1 = X*theta;
@@ -38,10 +37,6 @@ grad = t8./m;
 grad = grad.+t9';
 
  
-=======
-
->>>>>>> fe6e06c7c1c121682cf996111b8b2ce25f363d55
-
 
 
 % =============================================================

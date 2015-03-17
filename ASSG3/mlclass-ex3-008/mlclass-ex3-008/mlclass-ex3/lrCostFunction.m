@@ -41,7 +41,17 @@ grad = zeros(size(theta));
 
 
 
+t1 = X*theta;
+t2 = sigmoid(t1);
+t3 = -(1.-y)'*log(1.-t2);
+t4 = -y'*log(t2);
+t5 = t3+t4;
+t5 = t5./m;
+J = t5;
 
+t6 = (t2-y)';
+t7 = t6*X;
+grad = t7./m;
 
 
 

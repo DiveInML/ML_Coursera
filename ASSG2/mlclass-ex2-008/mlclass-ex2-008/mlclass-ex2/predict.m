@@ -15,11 +15,8 @@ p = zeros(m, 1);
 %               You should set p to a vector of 0's and 1's
 %
 
-<<<<<<< HEAD
 p = round(sigmoid(X*theta));
-=======
 
->>>>>>> fe6e06c7c1c121682cf996111b8b2ce25f363d55
 
 
 
