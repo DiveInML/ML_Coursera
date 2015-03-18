@@ -49,10 +49,19 @@ X = [ones(m, 1) X];
 %                 initial_theta, options);
 %
 
+tempAllTheta = [];
 
+for k = 1:num_labels,
+	binaryLabelVector = (y == k);
+	currentTheta = zeros(n+1,1);
+	options = optimset('GradObj', 'on', 'MaxIter', 50);
+	[currentTheta currentCost] = fmincg (@(t)(lrCostFunction(t, X, binaryLabelVector, lambda)),currentTheta, options);
+	if size(currentTheta)(1) == 1,
+		currentTheta = currentTheta';
+	end;
+	tempAllTheta = [tempAllTheta currentTheta];
 
-
-
+all_theta = tempAllTheta';
 
 
 

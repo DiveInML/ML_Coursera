@@ -30,7 +30,10 @@ X = [ones(m, 1) X];
 %       for each row.
 %       
 
-
+t1 = X*all_theta';
+hypothesis = 1./(1.+e.^-t1);
+[m,mi] = max(hypothesis,[],2);
+p = p.+mi;
 
 
 
