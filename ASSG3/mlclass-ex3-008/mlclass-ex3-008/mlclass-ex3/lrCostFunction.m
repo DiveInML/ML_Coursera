@@ -53,6 +53,7 @@ theta1 = theta(2:n);
 t6=(lambda/(2*m))*(sum(theta1.^2));
 J = t5+t6;
 
+
 t7 = (t2-y)';
 t8 = t7*X;
 t9 = [0;(lambda/m).*((theta1))];
