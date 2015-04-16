@@ -16,8 +16,9 @@ sim = 0;
 %
 %
 
-
-
+num = sum((x1.-x2).^2);
+den = 2*sigma*sigma;
+sim = e^(-num/den);
 
 
 
