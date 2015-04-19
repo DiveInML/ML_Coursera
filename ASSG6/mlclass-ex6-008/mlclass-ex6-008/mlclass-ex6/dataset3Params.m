@@ -24,7 +24,31 @@ sigma = 0.3;
 %
 
 
+C_Options = [0.01 0.03 0.1 0.3 1 3 10 30];
+Sigma_Options = [0.01 0.03 0.1 0.3 1 3 10 30];
 
+min_error = 1000000;
+res_C = 0;
+res_sigma = 0;
+C_Size = size(C_Options)(2);
+Sigma_Size = size(Sigma_Options)(2);
+
+for i = 1:C_Size,
+	currc = C_Options(1,i);
+	for j = 1:Sigma_Size,
+		currsig = Sigma_Options(1,j);
+		model = svmTrain(X,y,currc,@(x1,x2) gaussianKernel(x1,x2,currsig));
+		prediction = svmPredict(model,Xval);
+		mean_error = mean(double(prediction~=yval));
+		if mean_error < min_error,
+			min_error = mean_error;
+			res_C = currc;
+			res_sigma = currsig;
+		end;
+	end;
+end;
+C = res_C;
+sigma = res_sigma;			
 
 
 
